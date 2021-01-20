@@ -5,6 +5,17 @@
     padding: 0;
 }
 
+/*---Variable declarations---*/
+:root{
+    --input-color: #565e6f;
+    --input-border: #CDD9ED;
+    /*--linear-gradient:linear-gradient(90deg, #050C3F -5.08%, rgba(185, 27, 27, 0.918) 105.08%);*/
+    --linear-gradient:linear-gradient(90deg, #050C3F -5.08%, #9A3E3E 105.08%);
+    --font-color: #827B7B;
+  
+  }
+
+
 body {
     font-family: "Cormorant Garamond", serif;
     line-height: 1.4;
@@ -13,4 +24,50 @@ body {
 
 .header{
     background:linear-gradient(252.57deg, rgba(2, 15, 84, 0.89) 8.82%, rgba(84, 2, 17, 0.6319) 54.97%, rgba(2, 15, 84, 0.6141) 75.63%, rgba(98, 0, 0, 0.5963) 95.87%);
+}
+
+.styledInput {
+    display: flex;
+    width: 35vw;
+    position: relative;
+    margin-top: -2px;
+}
+
+.styledInput>input{
+    width: 100%;
+    height: 6vh;
+    line-height:auto;
+    background: #fff;
+    background-size: 40px;
+    background-position-y: top;
+    border-radius: 10px;
+    padding: 8px 45px 8px 16px;
+    font-size: 20px;
+    color: var(--input-color);
+    -webkit-appearance: none;
+    border: none;
+    font-weight: 600;
+  } 
+
+.styledInput>input:focus{
+  outline: none;
+  background-color: #e8f0fe;
+}
+
+.formCard{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 50px;
+  padding: 10px;
+}
+
+.pill{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  height: 8vh;
+  border-radius: 15px;
+  background-color: #f5f5f5;
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-top: -30px;
 }
