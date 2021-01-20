@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
-function Header() {
+function Header({ title }) {
     return (
         <header style={header} className="header">
-            <h2>User Registration</h2>
+            <h2>{title}</h2>
         </header>
     )
 }
@@ -15,5 +16,12 @@ const header = {
     color: "#fff"
 }
 
+Header.defaultProps = {
+    title: 'User Registration'
+}
+
+Header.propTypes = {
+    title: PropTypes.string
+}
 export default Header;
 
