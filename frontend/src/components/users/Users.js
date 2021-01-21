@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Users = ({ users, removeUser }) => {
 
     return (
-        <div style={container}>
+        <div style={users.length !== 0 ? container : null}>
             {
                 users.map(user => (
                     <UserInfo user={user} key={user.id} removeUser={removeUser} />
@@ -17,7 +17,8 @@ const Users = ({ users, removeUser }) => {
 
 const container = {
     border: '2px solid #544073',
-    margin: '50px 50px 80px 50px'
+    margin: '50px',
+    padding: '10px'
 }
 
 Users.propTypes = {
