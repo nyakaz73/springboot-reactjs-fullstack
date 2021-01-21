@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import InputRow from '../row/InputRow';
-
-function RegisterUser() {
-    const [state, setState] = useState({
+import Button from '../Button';
+import PropTypes from "prop-types";
+function RegisterUser({ addUser }) {
+    const [user, setUser] = useState({
         name: '',
         surname: '',
         email: '',
@@ -13,15 +14,34 @@ function RegisterUser() {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setState({
-            ...state,
+        setUser({
+            ...user,
             [name]: value
         })
     }
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if (user['password'] === user['confirm_password']) {
+            addUser(user);
+            setUser({
+                'name': '',
+                'surname': '',
+                'email': '',
+                'username': '',
+                'password': '',
+                'confirm_password': ''
+            })
+        } else {
+            console.log("Incorrect Password !")
+        }
+
+
+    }
+
     return (
         <div className="formCard">
-            <form >
+            <form onSubmit={onSubmit} >
                 <div className="pill"></div>
                 <br />
                 <div style={row}>
@@ -30,7 +50,7 @@ function RegisterUser() {
                             type="text"
                             name="name"
                             placeholder="Name"
-                            value={state['name']}
+                            value={user['name']}
                             onChange={handleInputChange}
                         />
                     </InputRow>
@@ -39,7 +59,7 @@ function RegisterUser() {
                             type="text"
                             name="surname"
                             placeholder="Surname"
-                            value={state['surname']}
+                            value={user['surname']}
                             onChange={handleInputChange}
                         />
                     </InputRow>
@@ -51,7 +71,7 @@ function RegisterUser() {
                             type="email"
                             name="email"
                             placeholder="Email"
-                            value={state['email']}
+                            value={user['email']}
                             onChange={handleInputChange}
                         />
                     </InputRow>
@@ -60,7 +80,7 @@ function RegisterUser() {
                             type="text"
                             name="username"
                             placeholder="Username"
-                            value={state['username']}
+                            value={user['username']}
                             onChange={handleInputChange}
                         />
                     </InputRow>
@@ -72,7 +92,7 @@ function RegisterUser() {
                             type="password"
                             name="password"
                             placeholder="Password"
-                            value={state['password']}
+                            value={user['password']}
                             onChange={handleInputChange}
                         />
                     </InputRow>
@@ -81,12 +101,16 @@ function RegisterUser() {
                             type="password"
                             name="confirm_password"
                             placeholder="password"
-                            value={state['confirm_password']}
+                            value={user['confirm_password']}
                             onChange={handleInputChange}
                         />
                     </InputRow>
+
                 </div>
-                <button>Submit</button>
+                <div style={button}>
+                    <Button />
+                </div>
+
             </form>
 
         </div>
@@ -98,6 +122,17 @@ const row = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center'
+}
+
+const button = {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: '10px'
+
+}
+
+RegisterUser.propTyoes = {
+    addUser: PropTypes.func.isRequired,
 }
 
 export default RegisterUser;
