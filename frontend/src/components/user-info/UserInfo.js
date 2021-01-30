@@ -2,6 +2,7 @@ import React from 'react'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
+import CreateIcon from '@material-ui/icons/Create';
 import PropTypes from "prop-types"
 const UserInfo = ({ user, removeUser }) => {
 
@@ -38,6 +39,9 @@ const UserInfo = ({ user, removeUser }) => {
             <p>{username}</p>
             <div style={buttons}>
                 {/*<IconButton color="secondary" onClick={this.props.removeUser.bind(this,id )} >  Because binding in faling in Jest i have used arrow function binding*/}
+                <IconButton style={{ color: '#888990' }}  >
+                    <CreateIcon />
+                </IconButton>
                 <IconButton color="secondary" onClick={(e) => deleteUser(id)} >
                     <DeleteIcon />
                 </IconButton>
