@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import InputRow from '../row/InputRow';
 import Button from "../button/Button";
 import PropTypes from "prop-types";
-function RegisterUser({ addUser }) {
+
+const RegisterUser = ({ addUser }) => {
     const [user, setUser] = useState({
         name: '',
         surname: '',
