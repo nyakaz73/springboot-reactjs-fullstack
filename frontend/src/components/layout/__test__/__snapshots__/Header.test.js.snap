@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<header
+  className="header"
+  style={
+    Object {
+      "color": "#fff",
+      "display": "flex",
+      "justifyContent": "center",
+      "padding": "10px",
+    }
+  }
+>
+  <h2>
+    User Registration
+  </h2>
+</header>
+`;
+
+exports[`matches snapshot with a prop 1`] = `
+<header
+  className="header"
+  style={
+    Object {
+      "color": "#fff",
+      "display": "flex",
+      "justifyContent": "center",
+      "padding": "10px",
+    }
+  }
+>
+  <h2>
+    My title
+  </h2>
+</header>
+`;
