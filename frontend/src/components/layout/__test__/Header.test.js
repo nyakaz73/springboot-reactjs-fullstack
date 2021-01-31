@@ -18,9 +18,10 @@ afterEach(() => {
 });
 
 
-it("render Header without crashing", () => {
+it("renders Header without crashing", () => {
     //Paint the DOM with component
     act(() => {
         ReactDOM.render(<Header />, container)
     })
+    expect(container.textContent).toBe("User Registration")
 })
