@@ -101,7 +101,7 @@ const RegisterUser = ({ addUser }) => {
                         <input
                             type="password"
                             name="confirm_password"
-                            placeholder="password"
+                            placeholder="Confirm Password"
                             value={user['confirm_password']}
                             onChange={handleInputChange}
                         />
