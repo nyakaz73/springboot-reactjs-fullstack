@@ -51,6 +51,15 @@ it("Test Email Input", () => {
 })
 
 it("Test Username Input", () => {
-    const value = setup("Usernames", "johhny")
+    const value = setup("Username", "johhny")
     expect(value).toBe("johhny")
+})
+
+it("onSubmit with addUser callback Prop fired", () => {
+    //Mocking a callback function
+    const addUser = jest.fn();
+    const utils = render(<RegisterUser addUser={addUser} />)
+    const submitButton = utils.getByText('Submit');
+    submitButton.dispatchEvent(new MouseEvent('click'));
+    expect(addUser).toHaveBeenCalledTimes(1)
 })
