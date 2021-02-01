@@ -63,3 +63,8 @@ it("onSubmit with addUser callback Prop fired", () => {
     submitButton.dispatchEvent(new MouseEvent('click'));
     expect(addUser).toHaveBeenCalledTimes(1)
 })
+
+it("matches snapshots", () => {
+    const tree = renderer.create(<RegisterUser />).toJSON()
+    expect(tree).toMatchSnapshot()
+})
