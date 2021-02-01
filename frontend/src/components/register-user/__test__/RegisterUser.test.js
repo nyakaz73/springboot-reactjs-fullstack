@@ -23,9 +23,7 @@ it("renders RegisterUser without crashing", () => {
 
 })
 
-const setup = () => {
 
-}
 //To test the state of the form we use Enzyme simulate or React Testing Lib simulate events
 it("update on onChange state on input form", () => {
     const utils = render(<RegisterUser />);
@@ -34,3 +32,25 @@ it("update on onChange state on input form", () => {
     expect(input.value).toBe("John")
 })
 
+const setup = (placeholder, value) => {
+    const utils = render(<RegisterUser />);
+    const input = utils.getByPlaceholderText(placeholder);
+    fireEvent.change(input, { target: { value: value } })
+    return input.value;
+}
+
+
+it("Test Surname Input", () => {
+    const value = setup("Surname", "Doe")
+    expect(value).toBe("Doe")
+})
+
+it("Test Email Input", () => {
+    const value = setup("Email", "tafadzwalnyamukapa@gmail.com")
+    expect(value).toBe("tafadzwalnyamukapa@gmail.com")
+})
+
+it("Test Username Input", () => {
+    const value = setup("Usernames", "johhny")
+    expect(value).toBe("johhny")
+})
