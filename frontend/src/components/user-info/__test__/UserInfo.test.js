@@ -35,7 +35,9 @@ it("It Renders <UserInfo/> without crashing", () => {
 })
 
 it("<UserInfo/> matches snapshot", () => {
-    const tree = renderer.create(<UserInfo />).toJSON();
+    const removeUser = jest.fn()
+    const user = {}
+    const tree = renderer.create(<UserInfo user={user} removeUser={removeUser} />).toJSON();
     expect(tree).toMatchSnapshot();
 })
 
