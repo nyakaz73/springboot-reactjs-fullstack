@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { act, fireEvent, render } from "@testing-library/react";
+import { act } from "@testing-library/react";
 import UserInfo from "../UserInfo";
 import renderer from "react-test-renderer"
 
