@@ -27,10 +27,10 @@ it("It Renders <UserInfo/> without crashing", () => {
     act(() => {
         ReactDOM.render(<UserInfo user={user} removeUser={removeUser} />, container);
     });
-    expect(container.textContent).toContain(fakeUser.name);
-    expect(container.textContent).toContain(fakeUser.surname);
-    expect(container.textContent).toContain(fakeUser.email);
-    expect(container.textContent).toContain(fakeUser.username);
+    expect(container.textContent).toContain(user.name);
+    expect(container.textContent).toContain(user.surname);
+    expect(container.textContent).toContain(user.email);
+    expect(container.textContent).toContain(user.username);
 
 })
 
