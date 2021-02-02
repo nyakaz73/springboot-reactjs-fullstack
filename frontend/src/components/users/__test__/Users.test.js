@@ -22,3 +22,9 @@ it("Renders <Users/> without crashing", () => {
     const users = []
     render(<Users users={users} removeUser={removeUser} />)
 })
+
+it("matches snapshot", () => {
+    const tree = renderer.create(<Users />).toJSON();
+    expect(tree).toMatchSnapshot();
+
+})
