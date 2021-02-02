@@ -2,9 +2,8 @@ import React from 'react'
 import UserInfo from '../user-info/UserInfo';
 import PropTypes from "prop-types";
 const Users = ({ users, removeUser }) => {
-
     return (
-        <div style={users.length !== 0 ? container : null}>
+        <div style={(users !== undefined || users.length !== 0) ? container : null}>
             {
                 users.map(user => (
                     <UserInfo user={user} key={user.id} removeUser={removeUser} />
