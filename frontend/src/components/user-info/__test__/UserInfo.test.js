@@ -34,3 +34,8 @@ it("It Renders <UserInfo/> without crashing", () => {
 
 })
 
+it("<UserInfo/> matches snapshot", () => {
+    const tree = renderer.create(<UserInfo />).toJSON();
+    expect(tree).toMatchSnapshot();
+})
+
