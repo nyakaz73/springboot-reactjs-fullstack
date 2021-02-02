@@ -17,6 +17,20 @@ afterEach(() => {
 });
 
 it("It Renders <UserInfo/> without crashing", () => {
-    render(<UserInfo />)
+    const removeUser = jest.fn()
+    const user = {
+        'name': 'John',
+        'surname': 'Doe',
+        'email': 'john@gmail.com',
+        'username': 'johnny',
+    }
+    act(() => {
+        ReactDOM.render(<UserInfo user={user} removeUser={removeUser} />, container);
+    });
+    expect(container.textContent).toContain(fakeUser.name);
+    expect(container.textContent).toContain(fakeUser.surname);
+    expect(container.textContent).toContain(fakeUser.email);
+    expect(container.textContent).toContain(fakeUser.username);
+
 })
 
