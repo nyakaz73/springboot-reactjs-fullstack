@@ -16,3 +16,9 @@ afterEach(() => {
     container = null;
 });
 
+
+it("Renders <Users/> without crashing", () => {
+    const removeUser = jest.fn()
+    const users = []
+    render(<Users users={users} removeUser={removeUser} />)
+})
