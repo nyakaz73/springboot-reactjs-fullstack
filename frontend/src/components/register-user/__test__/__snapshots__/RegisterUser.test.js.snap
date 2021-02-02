@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshots 1`] = `
+<div
+  className="formCard"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="pill"
+    />
+    <br />
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "10px",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "color": "#1010108a",
+              "fontWeight": "500",
+              "paddingLeft": "16px",
+            }
+          }
+        >
+          Name
+        </p>
+        <div
+          className="styledInput"
+        >
+          <input
+            name="name"
+            onChange={[Function]}
+            placeholder="Name"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "10px",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "color": "#1010108a",
+              "fontWeight": "500",
+              "paddingLeft": "16px",
+            }
+          }
+        >
+          Surname
+        </p>
+        <div
+          className="styledInput"
+        >
+          <input
+            name="surname"
+            onChange={[Function]}
+            placeholder="Surname"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "10px",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "color": "#1010108a",
+              "fontWeight": "500",
+              "paddingLeft": "16px",
+            }
+          }
+        >
+          Email
+        </p>
+        <div
+          className="styledInput"
+        >
+          <input
+            name="email"
+            onChange={[Function]}
+            placeholder="Email"
+            type="email"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "10px",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "color": "#1010108a",
+              "fontWeight": "500",
+              "paddingLeft": "16px",
+            }
+          }
+        >
+          Username
+        </p>
+        <div
+          className="styledInput"
+        >
+          <input
+            name="username"
+            onChange={[Function]}
+            placeholder="Username"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "10px",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "color": "#1010108a",
+              "fontWeight": "500",
+              "paddingLeft": "16px",
+            }
+          }
+        >
+          Password
+        </p>
+        <div
+          className="styledInput"
+        >
+          <input
+            name="password"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "10px",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "color": "#1010108a",
+              "fontWeight": "500",
+              "paddingLeft": "16px",
+            }
+          }
+        >
+          Confirm Password
+        </p>
+        <div
+          className="styledInput"
+        >
+          <input
+            name="confirm_password"
+            onChange={[Function]}
+            placeholder="Confirm Password"
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "flex-end",
+          "padding": "10px",
+        }
+      }
+    >
+      <button
+        className="btn"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;
