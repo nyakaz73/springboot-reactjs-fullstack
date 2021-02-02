@@ -17,7 +17,20 @@ afterEach(() => {
 });
 
 it("Renders without crashing", () => {
+    const label = "Hello"
     act(() => {
-        ReactDOM.render(<InputRow />, container);
+        ReactDOM.render(<InputRow label={label}>
+            <input />
+        </InputRow>, container);
     });
+    expect(container.textContent).toContain('Hello');
+})
+
+it("matches snapshot", () => {
+    const label = "Hello"
+    const tree = renderer.create(<InputRow label={label}>
+        <input />
+    </InputRow>)
+
+    expect(tree).toMatchSnapshot();
 })
