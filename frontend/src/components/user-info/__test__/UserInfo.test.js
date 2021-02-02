@@ -16,3 +16,7 @@ afterEach(() => {
     container = null;
 });
 
+it("It Renders <UserInfo/> without crashing", () => {
+    render(<UserInfo />)
+})
+
