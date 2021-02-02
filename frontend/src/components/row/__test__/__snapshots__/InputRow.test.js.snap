@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "10px",
+    }
+  }
+>
+  <p
+    style={
+      Object {
+        "color": "#1010108a",
+        "fontWeight": "500",
+        "paddingLeft": "16px",
+      }
+    }
+  >
+    Hello
+  </p>
+  <div
+    className="styledInput"
+  >
+    <input />
+  </div>
+</div>
+`;
