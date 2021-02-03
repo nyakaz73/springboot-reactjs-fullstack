@@ -45,6 +45,10 @@ it("Renders <Users/> without crashing", () => {
             password: "some-strong-password3",
         },
     ];
+    // Simulate an async call
+    global.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve(users)
+    );
     act(() => {
         ReactDOM.render(<Users users={users} removeUser={removeUser} />, container);
     });
