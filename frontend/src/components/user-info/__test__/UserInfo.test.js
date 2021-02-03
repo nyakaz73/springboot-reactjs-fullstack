@@ -18,19 +18,27 @@ afterEach(() => {
 
 it("It Renders <UserInfo/> without crashing", () => {
     const removeUser = jest.fn()
-    const user = {
-        'name': 'John',
-        'surname': 'Doe',
-        'email': 'john@gmail.com',
-        'username': 'johnny',
-    }
+    const fakeUser = {
+        id: "1",
+        name: "John",
+        surname: "Marcus",
+        username: "johnny",
+        email: "john@gmail.com",
+        password: "some-strong-password",
+    };
+    // Simulate an async call
+    global.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+            json: () => Promise.resolve(fakeUser),
+        })
+    );
     act(() => {
-        ReactDOM.render(<UserInfo user={user} removeUser={removeUser} />, container);
+        ReactDOM.render(<UserInfo user={fakeUser} removeUser={removeUser} />, container);
     });
-    expect(container.textContent).toContain(user.name);
-    expect(container.textContent).toContain(user.surname);
-    expect(container.textContent).toContain(user.email);
-    expect(container.textContent).toContain(user.username);
+    expect(container.textContent).toContain(fakeUser.name);
+    expect(container.textContent).toContain(fakeUser.surname);
+    expect(container.textContent).toContain(fakeUser.email);
+    expect(container.textContent).toContain(fakeUser.username);
 
 })
 
