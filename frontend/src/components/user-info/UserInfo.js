@@ -42,7 +42,7 @@ const UserInfo = ({ user, removeUser }) => {
                 <IconButton style={{ color: '#888990' }}  >
                     <CreateIcon />
                 </IconButton>
-                <IconButton color="secondary" onClick={(e) => deleteUser(id)} >
+                <IconButton aria-label="delete-button" color="secondary" onClick={(e) => deleteUser(id)} >
                     <DeleteIcon />
                 </IconButton>
             </div>
