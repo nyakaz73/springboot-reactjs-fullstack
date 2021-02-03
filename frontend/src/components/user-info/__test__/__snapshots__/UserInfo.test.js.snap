@@ -91,6 +91,7 @@ exports[`<UserInfo/> matches snapshot 1`] = `
       </span>
     </button>
     <button
+      aria-label="delete-button"
       className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorSecondary"
       disabled={false}
       onBlur={[Function]}
