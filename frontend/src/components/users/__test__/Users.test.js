@@ -47,7 +47,9 @@ it("Renders <Users/> without crashing", () => {
     ];
     // Simulate an async call
     global.fetch = jest.fn().mockImplementation(() =>
-        Promise.resolve(users)
+        Promise.resolve({
+            json: () => Promise.resolve(users),
+        })
     );
     act(() => {
         ReactDOM.render(<Users users={users} removeUser={removeUser} />, container);
