@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { act, cleanup, render } from "@testing-library/react";
 import UserInfo from "../UserInfo";
 import renderer from "react-test-renderer"
