@@ -51,8 +51,8 @@ it("onClick deleteUser button fired", () => {
         'username': 'johnny',
     }
 
-    const utils = render(<UserInfo user={user} removeUser={removeUser} />)
-    const removeButton = utils.getByLabelText('delete-button')
+    const { getByLabelText } = render(<UserInfo user={user} removeUser={removeUser} />)
+    const removeButton = getByLabelText('delete-button')
     act(() => {
         removeButton.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     });

@@ -26,15 +26,15 @@ it("renders RegisterUser without crashing", () => {
 
 //To test the state of the form we use Enzyme simulate or React Testing Lib simulate events
 it("update on onChange state on input form", () => {
-    const utils = render(<RegisterUser />);
-    const input = utils.getByPlaceholderText('Name');
+    const { getByPlaceholderText } = render(<RegisterUser />);
+    const input = getByPlaceholderText('Name');
     fireEvent.change(input, { target: { value: 'John' } })
     expect(input.value).toBe("John")
 })
 
 const setup = (placeholder, value) => {
-    const utils = render(<RegisterUser />);
-    const input = utils.getByPlaceholderText(placeholder);
+    const { getByPlaceholderText } = render(<RegisterUser />);
+    const input = getByPlaceholderText(placeholder);
     fireEvent.change(input, { target: { value: value } })
     return input.value;
 }
@@ -58,8 +58,8 @@ it("Test Username Input", () => {
 it("onSubmit with addUser callback Prop fired", () => {
     //Mocking a callback function
     const addUser = jest.fn();
-    const utils = render(<RegisterUser addUser={addUser} />)
-    const submitButton = utils.getByText('Submit');
+    const { getByText } = render(<RegisterUser addUser={addUser} />)
+    const submitButton = getByText('Submit');
     submitButton.dispatchEvent(new MouseEvent('click'));
     expect(addUser).toHaveBeenCalledTimes(1)
 })
