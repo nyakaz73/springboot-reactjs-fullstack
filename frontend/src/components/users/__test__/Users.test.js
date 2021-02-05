@@ -1,21 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { act, fireEvent, render } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 import Users from "../Users";
 import renderer from "react-test-renderer"
 
-let container;
-
-beforeEach(() => {
-    container = document.createElement('div');
-    document.body.appendChild(container);
-});
-
-afterEach(() => {
-    document.body.removeChild(container);
-    container = null;
-});
-
+afterEach(cleanup)
 
 it("Renders <Users/> without crashing", () => {
     const removeUser = jest.fn()
@@ -51,9 +39,7 @@ it("Renders <Users/> without crashing", () => {
             json: () => Promise.resolve(users),
         })
     );
-    act(() => {
-        ReactDOM.render(<Users users={users} removeUser={removeUser} />, container);
-    });
+    const { container } = render(<Users users={users} removeUser={removeUser} />);
     expect(container.textContent).toContain(users[0].email);
     expect(container.textContent).toContain(users[0].name);
     expect(container.textContent).toContain(users[0].surname);
