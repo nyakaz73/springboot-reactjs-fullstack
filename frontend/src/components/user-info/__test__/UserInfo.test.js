@@ -5,7 +5,7 @@ import renderer from "react-test-renderer"
 
 afterEach(cleanup)
 
-it("It Renders <UserInfo/> without crashing", () => {
+it("It Renders <UserInfo/> without crashing", async () => {
     const removeUser = jest.fn()
     const fakeUser = {
         id: "1",
@@ -21,7 +21,15 @@ it("It Renders <UserInfo/> without crashing", () => {
             json: () => Promise.resolve(fakeUser),
         })
     );
-    const { container } = render(<UserInfo user={fakeUser} removeUser={removeUser} />);
+
+    // Use the asynchronous version of act to apply resolved promises\
+    let utils
+    //act makes sure all updates related to the component like event, rendering or data fetch are applied to the DOM
+    await act(async () => {
+        utils = render(<UserInfo user={fakeUser} removeUser={removeUser} />);
+    })
+    const { container } = utils;
+
     expect(container.textContent).toContain(fakeUser.name);
     expect(container.textContent).toContain(fakeUser.surname);
     expect(container.textContent).toContain(fakeUser.email);
